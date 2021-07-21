@@ -5,15 +5,9 @@ import styled from 'styled-components';
 import StyledLayout from '../navigation/Layout';
 
 const NFTImage = styled.img`
-  width: 100px;
-  height: 100px;
-`
-
-const Main = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: linear-gradient(#ffe7ea, #FFFFFF);
+  width: 150px;
+  height: 150px;
+  filter: drop-shadow(0 1rem 1.5rem rgba(0,6,55,.6));
 `
 
 const openSeaAPI =  'https://api.opensea.io/api/v1/assets';
@@ -34,6 +28,7 @@ const NFTPage = ({provider, loadWeb3Modal, logoutOfWeb3Modal} : any) => {
             retrieveAddress();
         } else {
             setAddress('');
+            setAssets([]);
         }
     },[provider])
 
@@ -69,12 +64,10 @@ const NFTPage = ({provider, loadWeb3Modal, logoutOfWeb3Modal} : any) => {
 
     return (
         <StyledLayout {...web3Props}>
-            <Main>
-                {address}
-                {assets?.map(asset => 
-                    <NFTImage src={asset.image_thumbnail_url}/>
-                )}
-            </Main>
+            {address}
+            {assets?.map(asset => 
+                <NFTImage src={asset.image_thumbnail_url}/>
+            )}
         </StyledLayout>
     )
 }

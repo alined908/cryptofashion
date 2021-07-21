@@ -12,6 +12,7 @@ const Button = styled.button<Props>`
     background: black;
     color: white;
     border: 0;
+    cursor: pointer;
 
     ${props => props.primary && `
         background: white;
