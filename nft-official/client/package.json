@@ -11,6 +11,7 @@
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
     "@walletconnect/web3-provider": "^1.4.1",
+    "fabric": "^4.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-responsive": "^8.2.0",
