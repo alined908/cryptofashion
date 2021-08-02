@@ -14,8 +14,9 @@ interface NavigationSectionProps{
 const NavigationSection = ({setMobileHeaderOpen} : NavigationSectionProps) => {
     return (
         <Navigation>
-            {navigationTabs.map((tab) => 
+            {navigationTabs.map((tab, index) => 
                 <WrappedNavigationTab 
+                    key={index}
                     link={tab.link} 
                     name={tab.name} 
                     responsive={false}

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import Button from '../buttons/Button';
 import NavigationSection from '../../navigation/Navigation';
-import WalletButton from '../../WalletButton';
+import WalletButton from '../buttons/WalletButton';
 
 const Header = styled.div`
     display: flex;
@@ -32,11 +33,18 @@ const StyledHeader = ({isResponsive, setMobileHeaderOpen, provider, loadWeb3Moda
                 <Link to="/">NFTProject</Link>
             </LogoSection>
             <NavigationSection setMobileHeaderOpen={setMobileHeaderOpen}/>
+            <>
+            <Link to="/cart">
+                <Button>
+                    Cart
+                </Button>
+            </Link>
             <WalletButton 
                 provider={provider} 
                 loadWeb3Modal={loadWeb3Modal} 
                 logoutOfWeb3Modal={logoutOfWeb3Modal} 
             />
+            </>
         </Header>
     )
 }

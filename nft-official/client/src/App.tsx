@@ -5,13 +5,11 @@ function App() {
   const [provider, loadWeb3Modal, logoutOfWeb3Modal] = useWeb3Modal();
 
   return (
-    <div>
-      <Routes 
-        provider={provider} 
-        loadWeb3Modal={loadWeb3Modal} 
-        logoutOfWeb3Modal={logoutOfWeb3Modal}
-      />
-    </div>
+    <Routes 
+      provider={provider} 
+      loadWeb3Modal={loadWeb3Modal} 
+      logoutOfWeb3Modal={logoutOfWeb3Modal}
+    />
   );
 }
 
